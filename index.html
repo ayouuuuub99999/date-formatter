@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formateur de Date</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🎯 Formateur de Date</h1>
+        
+        <div class="input-group">
+            <label for="dateInput">Date à formater :</label>
+            <input type="datetime-local" id="dateInput" value="">
+        </div>
+
+        <div class="input-group">
+            <label for="formatSelect">Format prédéfini :</label>
+            <select id="formatSelect">
+                <option value="YYYY-MM-DD">YYYY-MM-DD (2024-03-15)</option>
+                <option value="DD/MM/YYYY">DD/MM/YYYY (15/03/2024)</option>
+                <option value="MM/DD/YYYY">MM/DD/YYYY (03/15/2024)</option>
+                <option value="YYYY-MM-DD HH:mm">YYYY-MM-DD HH:mm (2024-03-15 14:30)</option>
+                <option value="DD/MM/YYYY HH:mm:ss">DD/MM/YYYY HH:mm:ss (15/03/2024 14:30:45)</option>
+                <option value="HH:mm:ss">HH:mm:ss (14:30:45)</option>
+                <option value="custom">Personnalisé...</option>
+            </select>
+        </div>
+
+        <div class="input-group custom-format" id="customFormatGroup" style="display: none;">
+            <label for="customFormat">Format personnalisé :</label>
+            <input type="text" id="customFormat" placeholder="Ex: YYYY年MM月DD日 HH時mm分">
+            <div class="format-help">
+                <strong>Tokens disponibles :</strong>
+                <span>YYYY - Année</span>
+                <span>MM - Mois</span>
+                <span>DD - Jour</span>
+                <span>HH - Heures</span>
+                <span>mm - Minutes</span>
+                <span>ss - Secondes</span>
+            </div>
+        </div>
+
+        <button id="formatBtn">Formater la Date</button>
+
+        <div class="result-container">
+            <h3>Résultat :</h3>
+            <div class="result" id="result">-</div>
+        </div>
+
+        <div class="examples">
+            <h3>📋 Exemples de formats :</h3>
+            <div class="example-grid">
+                <div class="example">
+                    <code>YYYY-MM-DD</code>
+                    <span>→ 2024-03-15</span>
+                </div>
+                <div class="example">
+                    <code>DD/MM/YYYY HH:mm</code>
+                    <span>→ 15/03/2024 14:30</span>
+                </div>
+                <div class="example">
+                    <code>MM-DD-YYYY</code>
+                    <span>→ 03-15-2024</span>
+                </div>
+                <div class="example">
+                    <code>HH:mm:ss</code>
+                    <span>→ 14:30:45</span>
+                </div>
+                <div class="example">
+                    <code>YYYY年MM月DD日</code>
+                    <span>→ 2024年03月15日</span>
+                </div>
+                <div class="example">
+                    <code>DD MMMM YYYY</code>
+                    <span>→ 15 mars 2024</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
